@@ -3,9 +3,11 @@ import heroImage from "../assets/myImage.png"
 
 const Hero = () => {
   return (
-    <section class="bg-gray-900 min-h-screen overflow-hidden  text-white">
+    <section class="bg-gray-900 min-h-screen overflow-hidden lg:h-screen  text-white">
+      <div  class="mx-2 max-w-screen-2xl   py-30 lg:flex lg:h-screen lg:items-center">
+
   <div
-    class="mx-auto max-w-screen-3xl px-4  py-40 lg:flex lg:h-screen lg:items-center"
+    class="mx-auto max-w-screen-3xl px-4 ml-8 mr-12  py-40 lg:flex lg:h-screen lg:items-center"
   >
     <div class="mb-4 py-10  max-w-3xl text-center">
       <h1
@@ -16,7 +18,7 @@ const Hero = () => {
         <span   class="sm:block"> Storage Market </span>
       </h1>
 
-      {/* <img src={heroImage}   alt="" /> */}
+      
 
       <p class="mx-auto mt-4 py-5 max-w-xl sm:text-xl sm:leading-relaxed">
       4eva.Storage is a secure, reliable platform for Filecoin data storage, offering affordable, scalable solutions.
@@ -38,6 +40,14 @@ const Hero = () => {
         </a>
       </div>
     </div>
+  </div>
+  <img src={heroImage} class="object-contain max-w-xm rounded-lg 
+  mr-4 ml-12 shadow-3xl shadow-indigo-500/50 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}"   alt="" />
   </div>
 </section>
 
