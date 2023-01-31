@@ -2,12 +2,13 @@ import React from 'react';
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: false },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Docs', href: '#', current: false },
+  { name: 'Dashboard', to: '/dashboard', current: false },
+  { name: 'Team', to: '/team', current: false },
+  { name: 'Projects', to: '/projects', current: false },
+  { name: 'Docs', to: '#', current: false },
 ];
 
 function classNames(...classes) {
@@ -41,19 +42,19 @@ const Navbar = () => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-gray-900 text-white anti-antialiased'
-                            : 'text-white hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-semibold'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                    <Link
+                    key={item.name}
+                    to={item.to}
+                    className={classNames(
+                      item.current
+                        ? 'bg-gray-900 text-white anti-antialiased'
+                        : 'text-white hover:bg-gray-700 hover:text-white',
+                      'px-3 py-2 rounded-md text-sm font-semibold'
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Link>
                     ))}
                   </div>
                 </div>

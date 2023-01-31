@@ -1,23 +1,25 @@
 import React from 'react'
+import heroImage from "../assets/myImage.png"
 
 const Hero = () => {
   return (
     <section class="bg-gray-900 min-h-screen overflow-hidden  text-white">
   <div
-    class="mx-auto max-w-screen-xl px-4  py-40 lg:flex lg:h-screen lg:items-center"
+    class="mx-auto max-w-screen-3xl px-4  py-40 lg:flex lg:h-screen lg:items-center"
   >
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="mb-4 py-10  max-w-3xl text-center">
       <h1
-        class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+        class=" bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-6xl"
       >
-        Understand User Flow.
+        A Revolutionary 
 
-        <span class="sm:block"> Increase Conversion. </span>
+        <span   class="sm:block"> Storage Market </span>
       </h1>
 
-      <p class="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-        tenetur fuga ducimus numquam ea!
+      {/* <img src={heroImage}   alt="" /> */}
+
+      <p class="mx-auto mt-4 py-5 max-w-xl sm:text-xl sm:leading-relaxed">
+      4eva.Storage is a secure, reliable platform for Filecoin data storage, offering affordable, scalable solutions.
       </p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
