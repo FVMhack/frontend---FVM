@@ -10,3 +10,19 @@
     font-family: 'Ubuntu', sans-serif;
   }
 }
+
+/* 
+Dashboard Styling  */
+
+.analytics-container {
+  @apply p-4;
+}
+.analytics-data {
+  @apply flex flex-row justify-between p-2;
+}
+.data-item {
+  @apply flex flex-row justify-between p-2;
+}
+.data-name {
+  @apply font-bold;
+}
