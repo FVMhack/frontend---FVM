@@ -15,25 +15,25 @@ const Hero = () => {
       >
         A Revolutionary 
 
-        <span   class="sm:block"> Storage Market </span>
+        <span   class="sm:block py-2"> Storage Market </span>
       </h1>
 
       
 
-      <p class="mx-auto mt-4 py-5 max-w-xl sm:text-xl sm:leading-relaxed">
+      <p class="mx-auto  mt-4 py-5 max-w-xl sm:text-xl tracking-normal sm:leading-relaxed">
       4eva.Storage is a secure, reliable platform for Filecoin data storage, offering affordable, scalable solutions.
       </p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+          class="block w-full rounded border border-blue-600 tracking-wide bg-blue-600 px-12 py-3 text-lg font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
           href="/get-started"
         >
         Connect Wallet
         </a>
 
         <a
-          class="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+          class="block w-full rounded border border-blue-600 tracking-wide px-12 py-3 text-lg font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
           href="/about"
         >
           Learn More
@@ -42,7 +42,7 @@ const Hero = () => {
     </div>
   </div>
   <img src={heroImage} class="object-contain max-w-xm rounded-lg 
-  mr-4 ml-12 shadow-3xl shadow-indigo-500/50 {
+  mr-4 ml-12 transition-transform duration-[250ms]  hover:-translate-y-5 shadow-3xl shadow-indigo-500/50 {
   position: absolute;
   right: 0;
   top: 50%;
