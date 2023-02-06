@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Team from './pages/Team';
-import Dashboard from './pages/Dashboard';
-import Projects from './pages/Projects';
+import Create from './pages/Create';
+import Marketplace from './pages/Marketplace';
 
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
         <Routes>
       <Route exact path="/" element = {<Home />} />
       <Route exact path="/team" element = {<Team />} />
-      <Route exact path="/projects" element = {<Projects />} />
-      <Route exact path="/dashboard" element = {<Dashboard />} />
+      <Route exact path="/marketplace" element = {<Marketplace />} />
+      <Route exact path="/create" element = {<Create />} />
       </Routes>
      </Router>
     </div>
