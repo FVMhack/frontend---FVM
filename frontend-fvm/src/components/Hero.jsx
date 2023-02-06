@@ -27,7 +27,7 @@ const Hero = () => {
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
           class="block w-full rounded border border-blue-600 tracking-wide bg-blue-600 px-12 py-3 text-lg font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-          href="/get-started"
+          href="#"
         >
         Connect Wallet
         </a>

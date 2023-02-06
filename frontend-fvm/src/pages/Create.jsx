@@ -7,7 +7,8 @@ const Create = () => {
     projectDescription: "",
     rewardAmount: 0,
     deadline: "",
-    imgUrl: ""
+    imgUrl: "",
+    file: null
   });
 
   const handleInputChange = event => {
@@ -16,6 +17,14 @@ const Create = () => {
       [event.target.name]: event.target.value
     });
   };
+
+  const handleFileChange = event => {
+    setBountyDetails({
+      ...bountyDetails,
+      file: event.target.files[0]
+    });
+  };
+
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -51,17 +60,15 @@ const Create = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="rewardAmount">
-            Reward Amount:
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="file">
+            Upload File:
           </label>
           <input
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="number"
-            id="rewardAmount"
-            placeholder="In ETH"
-            name="rewardAmount"
-            value={bountyDetails.rewardAmount}
-            onChange={handleInputChange}
+            type="file"
+            id="file"
+            name="file"
+            onChange={handleFileChange}
           />
         </div>
         <div className="mb-4">

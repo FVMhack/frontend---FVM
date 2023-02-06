@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import Team from './pages/Team';
 import Create from './pages/Create';
 import Marketplace from './pages/Marketplace';
+import CreateBounty from './pages/CreateBounty';
+import Details from './pages/Details';
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
       <Route exact path="/team" element = {<Team />} />
       <Route exact path="/marketplace" element = {<Marketplace />} />
       <Route exact path="/create" element = {<Create />} />
+      <Route exact path="/createbounty" element = {<CreateBounty />} />
+      <Route exact path="/details" element = {<Details/>} />
+
       </Routes>
      </Router>
     </div>

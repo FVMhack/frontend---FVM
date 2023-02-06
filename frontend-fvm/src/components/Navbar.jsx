@@ -5,10 +5,11 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Create', to: '/dashboard', current: false },
+  { name: 'Create', to: '/create', current: false },
   { name: 'Team', to: '/team', current: false },
-  { name: 'Marketplace', to: '/projects', current: false },
-  { name: 'Docs', to: '#', current: false },
+  { name: 'Marketplace', to: '/marketplace', current: false },
+  { name: 'Bounty', to: '/createbounty', current: false },
+  { name: 'Details', to: '/details', current: false },
 ];
 
 function classNames(...classes) {
