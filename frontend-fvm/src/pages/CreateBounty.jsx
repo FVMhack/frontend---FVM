@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
-const CreateBounty = () => {
+const CreateBounty = (project) => {
   const [funding, setFunding] = useState('');
   const [auctionLength, setAuctionLength] = useState('');
   const [otherInformation, setOtherInformation] = useState('');
+  const [projectId, setprojectId] = useState({
+    projectId: project.id
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,7 +21,22 @@ const CreateBounty = () => {
           className="block text-gray-700 font-medium mb-2"
           htmlFor="funding"
         >
-          Funding
+          Project ID: {projectId.projectId}
+        </label>
+        <input
+          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          id="projectId"
+          type="number"
+          value={projectId.projectId}
+          onChange={(e) => setprojectId(e.target.value)}
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 font-medium mb-2"
+          htmlFor="funding"
+        >
+          Bidding Amount
         </label>
         <input
           className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
@@ -34,12 +52,12 @@ const CreateBounty = () => {
           className="block text-gray-700 font-medium mb-2"
           htmlFor="auctionLength"
         >
-          Auction Length
+          Wallet Address 
         </label>
         <input
           className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           id="auctionLength"
-          type="number"
+          type="text"
           value={auctionLength}
           onChange={(e) => setAuctionLength(e.target.value)}
         />

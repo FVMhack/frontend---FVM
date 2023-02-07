@@ -1,23 +1,10 @@
 import React from 'react'
 import heroImage from "../assets/myImage.png"
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+
 
 const Hero = () => {
-
-  const connectWallet = async () => {
- // Check if MetaMask is installed
- if (typeof window.ethereum === 'undefined') {
-  alert("Please install MetaMask to connect your wallet.")
-  return
-}
-
-// Request access to the user's wallet
-try {
-  await window.ethereum.enable()
-  console.log("Wallet connected successfully.")
-} catch (error) {
-  console.error("Error connecting to wallet:", error)
-}
-  }
   return (
     <section class="bg-gray-900 min-h-screen overflow-hidden lg:h-screen  text-white">
       <div  class="mx-2 max-w-screen-2xl   py-30 lg:flex lg:h-screen lg:items-center">
@@ -34,26 +21,16 @@ try {
         <span   class="sm:block py-2"> Storage Market </span>
       </h1>
 
-      
+
 
       <p class="mx-auto  mt-4 py-5 max-w-xl sm:text-xl tracking-normal sm:leading-relaxed">
       4eva.Storage is a secure, reliable platform for Filecoin data storage, offering affordable, scalable solutions.
       </p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a
-          class="block w-full cursor-pointer rounded border border-blue-600 tracking-wide bg-blue-600 px-12 py-3 text-lg font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-           onClick={connectWallet}
-        >
-        Connect Wallet
-        </a>
 
-        <a
-          class="block w-full rounded border border-blue-600 tracking-wide px-12 py-3 text-lg font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-          href="/about"
-        >
-          Learn More
-        </a>
+        <ConnectButton />
+        
       </div>
     </div>
   </div>

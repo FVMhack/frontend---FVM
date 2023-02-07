@@ -29,6 +29,15 @@ const Card = ({ project, onClick }) => {
       >
         View Contract
       </Link>
+      <Link
+        to={{
+          pathname: '/createBounty',
+          state: { projectId: project.id }
+        }}
+        className="bg-indigo-500 mx-3 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+      >
+        Bid 
+      </Link>
     </div>
   );
 };

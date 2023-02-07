@@ -5,6 +5,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const navigation = [
+  { name: 'Home', to: '/', current: false },
   { name: 'Create', to: '/create', current: false },
   { name: 'Team', to: '/team', current: false },
   { name: 'Marketplace', to: '/marketplace', current: false },

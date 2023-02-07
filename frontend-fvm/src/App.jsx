@@ -28,7 +28,7 @@ function App() {
       <Route exact path="/create" element = {<Create />} />
       <Route exact path="/createbounty" element = {<CreateBounty />} />
       <Route exact path="/details" element = {<Details/>} />
-      <Route exact path="/marketplace/${project.id}" element = {<ViewCard/>} />
+      <Route exact path="`/marketplace/${project.id}`" element = {<ViewCard/>} />
       </Routes>
      </Router>
     </div>
