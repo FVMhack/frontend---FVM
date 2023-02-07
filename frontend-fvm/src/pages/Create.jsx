@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Create = () => {
   const [bountyDetails, setBountyDetails] = useState({
     projectTitle: "",
-    projectDescription: "",
-    rewardAmount: 0,
+    sizeData: "",
+    storageFees: "",
     deadline: "",
     imgUrl: "",
     file: null
@@ -48,17 +48,34 @@ const Create = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="projectDescription">
-            Project Description:
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="sizeData">
+            Size of Data 
           </label>
-          <textarea
+          <input
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="projectDescription"
-            name="projectDescription"
-            value={bountyDetails.projectDescription}
+            type="number"
+            id="sizeData"
+            name="sizeData"
+            placeholder="in bytes"
+            value={bountyDetails.sizeData}
             onChange={handleInputChange}
           />
         </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="storageSize">
+            Storage Fees(for deal)
+          </label>
+          <input
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="number"
+            id="storageFees"
+            name="storageFees"
+            placeholder="in tFIL"
+            value={bountyDetails.storageFees}
+            onChange={handleInputChange}
+          />
+        </div>
+        
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-2" htmlFor="file">
             Upload File:
@@ -73,7 +90,7 @@ const Create = () => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-2" htmlFor="deadline">
-            Deadline:
+            Deadline Duration:
           </label>
           <input
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

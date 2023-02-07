@@ -1,95 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Card from "../components/Card";
 
 const Details = () => {
-    const [dataList, setDataList] = useState([
-      { id: 1, data: "", description: "" }
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    // dummy data for testing
+    setProjects([
+      {
+        projectTitle: "Build a website",
+        projectDescription: "Build a website using React",
+        deadline: "2023-12-31",
+        imgUrl: "https://images.unsplash.com/photo-1516245834210-c4c142787335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZpbnRlY2h8ZW58MHx8MHx8&w=1000&q=80",
+        contractAddress: "0x123456789"
+      },
+      {
+        projectTitle: "Develop a mobile app",
+        projectDescription: "Develop a mobile app using React Native",
+        deadline: "2023-12-31",
+        imgUrl: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Yml0Y29pbnxlbnwwfHwwfHw%3D&w=1000&q=80",
+        contractAddress: "0x987654321"
+      }
     ]);
-  
-    const [selectedFile, setSelectedFile] = useState(null);
-  
-    const handleDataChange = (idx, event) => {
-      const updatedDataList = [...dataList];
-      updatedDataList[idx][event.target.name] = event.target.value;
-      setDataList(updatedDataList);
-    };
-  
-    const handleAddData = () => {
-      setDataList([
-        ...dataList,
-        { id: dataList.length + 1, data: "", description: "" }
-      ]);
-    };
-  
-    const handleRemoveData = idx => {
-      setDataList([...dataList.slice(0, idx), ...dataList.slice(idx + 1)]);
-    };
-  
-    const handleFileInputChange = (event) => {
-      setSelectedFile(event.target.files[0]);
-    };
-  
+  }, []);
 
   return (
-    <>
-      <h2 className="text-2xl font-medium mb-4">List Data</h2>
-      {dataList.map((data, idx) => (
-        <div key={data.id} className="mb-4">
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">
-              Data {idx + 1}
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              name="data"
-              value={data.data}
-              onChange={e => handleDataChange(idx, e)}
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">
-              Description
-            </label>
-            <textarea
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="description"
-              value={data.description}
-              onChange={e => handleDataChange(idx, e)}
-            />
-          </div>
-          <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="fileInput">
-            Upload a file:
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="file"
-            id="fileInput"
-            onChange={handleFileInputChange}
-          />
-        </div>
-        {selectedFile && (
-          <div className="mb-4">
-            <p className="text-gray-700 font-medium">Selected file: {selectedFile.name}</p>
-          </div>
-        )}
-          <button
-            className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-            type="button"
-            onClick={() => handleRemoveData(idx)}
-          >
-            Remove
-          </button>
-        </div>
-      ))}
-      <button
-        className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-        type="button"
-        onClick={handleAddData}
-      >
-        Add Data
-      </button>
-    </>
+    <div class="flex flex-wrap p-1">
+    {projects.map((project, index) => (
+      <div class="sm:w-1/2 md:w-1/3 lg:w-1/4 p-3" key={index}>
+        <Card project={project} />
+      </div>
+    ))}
+  </div>
+  
   );
 };
 

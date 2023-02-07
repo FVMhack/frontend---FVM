@@ -2,6 +2,22 @@ import React from 'react'
 import heroImage from "../assets/myImage.png"
 
 const Hero = () => {
+
+  const connectWallet = async () => {
+ // Check if MetaMask is installed
+ if (typeof window.ethereum === 'undefined') {
+  alert("Please install MetaMask to connect your wallet.")
+  return
+}
+
+// Request access to the user's wallet
+try {
+  await window.ethereum.enable()
+  console.log("Wallet connected successfully.")
+} catch (error) {
+  console.error("Error connecting to wallet:", error)
+}
+  }
   return (
     <section class="bg-gray-900 min-h-screen overflow-hidden lg:h-screen  text-white">
       <div  class="mx-2 max-w-screen-2xl   py-30 lg:flex lg:h-screen lg:items-center">
@@ -26,8 +42,8 @@ const Hero = () => {
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          class="block w-full rounded border border-blue-600 tracking-wide bg-blue-600 px-12 py-3 text-lg font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-          href="#"
+          class="block w-full cursor-pointer rounded border border-blue-600 tracking-wide bg-blue-600 px-12 py-3 text-lg font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+           onClick={connectWallet}
         >
         Connect Wallet
         </a>

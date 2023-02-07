@@ -11,6 +11,7 @@ import Create from './pages/Create';
 import Marketplace from './pages/Marketplace';
 import CreateBounty from './pages/CreateBounty';
 import Details from './pages/Details';
+import ViewCard from './pages/ViewCard';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       <Route exact path="/create" element = {<Create />} />
       <Route exact path="/createbounty" element = {<CreateBounty />} />
       <Route exact path="/details" element = {<Details/>} />
-
+      <Route exact path="/marketplace/${project.id}" element = {<ViewCard/>} />
       </Routes>
      </Router>
     </div>
